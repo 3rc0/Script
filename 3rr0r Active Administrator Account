@@ -1,0 +1,49 @@
+:
+: +++++++++++++++++++++++++++++++++++++++++
+: +++++++++++++++++++++++++++++++++++++++++
+: +++ 3rr0r Active Adminitrator Account +++
+: +++ Version 0.01 beta                 +++
+: +++ Platform Windows 10               +++
+: +++ Created by 3rr0r C0nn3ct10n       +++
+: +++ https://3rc0.blogspot.com         +++
+: +++++++++++++++++++++++++++++++++++++++++
+: +++++++++++++++++++++++++++++++++++++++++
+: 
+:
+: 
+@echo off
+:
+title 3rr0r Active Adminitrator Account
+: Run the batch in Administrator Privileges 
+echo.
+echo.
+echo    Press Any Key to get Administrative Privileges
+echo.
+echo.
+echo.
+pause 
+ set "params=Problem_with_elevating_UAC_for_Administrator_Privileges"&if exist "%temp%\adminPriv.vbs" del "%temp%\adminPriv.vbs"
+fsutil dirty query %systemdrive%  >nul 2>&1 && goto _AdminPriv
+:    The following test is to avoid infinite looping if elevating UAC for Administrator Privileges failed
+If "%1"=="%params%" (echo Elevating UAC for Administrator Privileges failed&echo Right click on the script and select 'Run as administrator'&echo Press any key to exit...&pause>nul 2>&1&exit)
+cmd /u /c echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "%~0", "%params%", "", "runas", 1 > "%temp%\adminPri.vbs"&cscript //nologo "%temp%\adminPri.vbs"&exit
+cls
+:_AdminPriv
+cls
+echo.
+echo.  ================
+net user administrator
+echo.  ===============
+echo.
+echo Active the Administrator account 
+echo.
+echo.
+net user administrator /active:yes
+pause
+cls
+echo.
+echo.
+echo Done, Good bye
+echo.
+echo.
+timeout /t 10
