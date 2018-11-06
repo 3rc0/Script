@@ -1,28 +1,52 @@
 :
-: +++++++++++++++++++++++++++++++++++++++++
-: +++++++++++++++++++++++++++++++++++++++++
-: +++ 3rr0r Active Adminitrator Account +++
-: +++ Version 0.01 beta                 +++
-: +++ Platform Windows 10               +++
-: +++ Created by 3rr0r C0nn3ct10n       +++
-: +++ https://3rc0.blogspot.com         +++
-: +++++++++++++++++++++++++++++++++++++++++
-: +++++++++++++++++++++++++++++++++++++++++
+: +++++++++++++++++++++++++++++++++++++++++++++
+: +++++++++++++++++++++++++++++++++++++++++++++
+: +++ 3rr0r Activation Adminitrator Account +++
+: +++ Version 0.01 beta                     +++
+: +++ Platform Windows 10                   +++
+: +++ Created by 3rr0r C0nn3ct10n           +++
+: +++ https://3rc0.blogspot.com             +++
+: +++++++++++++++++++++++++++++++++++++++++++++
+: +++++++++++++++++++++++++++++++++++++++++++++
 : 
 :
 : 
 @echo off
-:
-title 3rr0r Active Adminitrator Account
-: Run the batch in Administrator Privileges 
+color 1F
+title 3rr0r Activation Adminitrator Account
+mode con lines=36 cols=120
+: Running the batch in Administrator Privileges
+cls
+echo.
+echo.                                                                                              
+echo.        /////////////////////////////////////////////////////////////////////////////////////////////////////`     
+echo.        :+NsyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyN/+     
+echo.        :+M+/.............................................................................................-om++     
+echo.        :+M+-                                                                                             `om++     
+echo.        :+M+-                                                                                             `om++     
+echo.        :+M+-             ----------`                                         `---------`                 `om++     
+echo.        :+M+-            -mNNNNNNNNMm-                                       `dMMNNNNNNMm.                `om++     
+echo.        :+M+-             `.......sMM+      ``  `````           ````````     `MMd.....sMM/                `om++     
+echo.        :+M+-                     +MM+     ymh-sdmmmds.       .+dmmmmmmd-    `MMd     oMM/                `om++     
+echo.        :+M+-              `osssssmMN-     mMMNNh//+MMd     `sNMmo/////:     `MMd     oMM/                `om++     
+echo.        :+M+-              `shhhhhmMN.     mMMs-    oh+     /MMs`            `MMd     oMM/                `om++     
+echo.        :+M+-                     oMM+     mMM              +MMo             `MMd     oMM/                `om++     
+echo.        :+M+-              ```````oMM+     mMM              .mMNo-`````      `MMd`````sMM/                `om++     
+echo.        :+M+-            -mmmmmmmmNMN:     mMN               `+dMNmmmmmm-    `mMMmmmmmNMN-                `om++     
+echo.        :+M+-  https://   ://///////.      ./-                 `-//////:      `:////////.  .blogspot.com  `om++     
+echo.        :+M+-                                                                                             `om++     
+echo.        :+M/+---------------------------------------------------------------------------------------------:om++     
+echo.        :+dsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssd++     
+echo.         -::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::      
+echo,                                                                   
 echo.
 echo.
-echo    Press Any Key to get Administrative Privileges
+echo.
+echo           ^ Press any key to continue... 
 echo.
 echo.
-echo.
-pause 
- set "params=Problem_with_elevating_UAC_for_Administrator_Privileges"&if exist "%temp%\adminPriv.vbs" del "%temp%\adminPriv.vbs"
+pause>nul
+set "params=Problem_with_elevating_UAC_for_Administrator_Privileges"&if exist "%temp%\adminPriv.vbs" del "%temp%\adminPriv.vbs"
 fsutil dirty query %systemdrive%  >nul 2>&1 && goto _AdminPriv
 :    The following test is to avoid infinite looping if elevating UAC for Administrator Privileges failed
 If "%1"=="%params%" (echo Elevating UAC for Administrator Privileges failed&echo Right click on the script and select 'Run as administrator'&echo Press any key to exit...&pause>nul 2>&1&exit)
@@ -31,19 +55,28 @@ cls
 :_AdminPriv
 cls
 echo.
-echo.  ================
-net user administrator
-echo.  ===============
-echo.
-echo Active the Administrator account 
-echo.
-echo.
 net user administrator /active:yes
+echo.
+echo.
+echo.  + + + + + + + + + + + + + + + + + + + + +
+echo.  * * * * * * * * * * * * * * * * * * * * *
+echo   * * Administrator Accout has Actived  * *
+echo.  * * * * * * * * * * * * * * * * * * * * *
+echo.  + + + + + + + + + + + + + + + + + + + + +
+echo.
+echo.
+net user administrator
+echo.
 pause
+color 47
 cls
 echo.
 echo.
-echo Done, Good bye
 echo.
 echo.
-timeout /t 10
+echo.
+echo    Done, Good Bye.
+echo.
+echo.
+echo.
+timeout /t 10>nul
