@@ -1,0 +1,19 @@
+: 3rr0r Network Tools
+
+@echo off
+
+netsh winsock reset
+netsh advfirewall reset
+netsh int tcp reset
+netsh int ip reset
+
+netsh int ip delete neighbors
+netsh int ip delete destinationcache
+netsh int ip delete arpcache
+
+ipconfig /flushDNS
+ipconfig /renew
+ipconfig /release
+ipconfig /registerDNS
+ipconfig /displayDNS
+
