@@ -1,0 +1,99 @@
+: UNDER CONSTRUCTION
+: UNDER CONSTRUCTION
+: 3rr0r Windows Administrator Tools
+: Version 0.00 beta
+: https://3rc0.blogspot.com
+: 
+: ɠ3rr0r C0nn3ct!0n
+: 
+: 
+: 
+: 
+: 
+@echo off
+COLOR 97
+SETLOCAL
+set "cmdwidth=118" %= @test01 command =%
+mode con lines=35 cols=118
+: 
+: 
+%= $_MianPage_ =%
+: 
+: 
+:_MainPage_
+echo.
+echo.                                                                                              
+echo.        /////////////////////////////////////////////////////////////////////////////////////////////////////`     
+echo.        :+NsyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyN/+     
+echo.        :+M+/.............................................................................................-om++     
+echo.        :+M+-                                                                                             `om++     
+echo.        :+M+-                                                                                             `om++     
+echo.        :+M+-             ----------`                                         `---------`                 `om++     
+echo.        :+M+-            -mNNNNNNNNMm-                                       `dMMNNNNNNMm.                `om++     
+echo.        :+M+-             `.......sMM+      ``  `````           ````````     `MMd.....sMM/                `om++     
+echo.        :+M+-                     +MM+     ymh-sdmmmds.       .+dmmmmmmd-    `MMd     oMM/                `om++     
+echo.        :+M+-              `osssssmMN-     mMMNNh//+MMd     `sNMmo/////:     `MMd     oMM/                `om++     
+echo.        :+M+-              `shhhhhmMN.     mMMs-    oh+     /MMs`            `MMd     oMM/                `om++     
+echo.        :+M+-                     oMM+     mMM              +MMo             `MMd     oMM/                `om++     
+echo.        :+M+-              ```````oMM+     mMM              .mMNo-`````      `MMd`````sMM/                `om++     
+echo.        :+M+-            -mmmmmmmmNMN:     mMN               `+dMNmmmmmm-    `mMMmmmmmNMN-                `om++     
+echo.        :+M+-  https://   ://///////.      ./-                 `-//////:      `:////////.  .blogspot.com  `om++     
+echo.        :+M+-                                                                                             `om++     
+echo.        :+M/+---------------------------------------------------------------------------------------------:om++     
+echo.        :+dsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssd++     
+echo.         -::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::      
+echo.                                                                   
+echo.
+echo.
+echo.          # # # # # # # # # #  # # # # # # # # # #
+echo.	  ^#					 ^#
+echo.	  ^#	[1]  -  Index			 ^#
+echo.	  ^#	[2]  -  Main Menu 		 ^#
+echo. 	  ^#	[3]  -  Exit 			 ^#
+echo.	  ^#					 ^#
+echo.          # # # # # # # # # #  # # # # # # # # # #
+echo.
+ECHO.
+choice /C:123 /N /M "   Select option  (0) (1) (E): "
+if errorlevel 3 goto:_Exit_
+if errorlevel 2 goto:_MainMenu_
+if errorlevel 1 goto:_Index_
+:
+:
+%= $Create_Library_3rc0 =%
+: 
+: 
+
+: 
+:  
+%= $Main_Menu =%
+: 
+: 
+: 
+
+: 
+: 
+%= $Exit =%
+: 
+: 
+:_Exit_
+echo. 
+%= Text Message for the Exit part =%
+echo. 3rr0r Windows Administrator Tools 
+echo. $Version_BatchFile% Beta Version
+echo. Good Bye.
+echo.
+%= Countdown for 15 seconds for the exit from the Batch Script =%
+timeout /t 15 >nul
+Exit
+
+
+
+
+
+
+
+
+
+
+
