@@ -15,6 +15,15 @@ COLOR 97
 SETLOCAL
 set "cmdwidth=118" %= @test01 command =%
 mode con lines=35 cols=118
+
+: 
+: 
+%= $Library_Section =%
+: 
+: 
+
+SET _un_ = UNDER CONSTRUCTION
+
 : 
 : 
 %= $_MianPage_ =%
@@ -54,10 +63,10 @@ echo.	  ^#					 ^#
 echo.          # # # # # # # # # #  # # # # # # # # # #
 echo.
 ECHO.
-choice /C:123 /N /M "   Select option  (0) (1) (E): "
-if errorlevel 3 goto:_Exit_
-if errorlevel 2 goto:_MainMenu_
-if errorlevel 1 goto:_Index_
+choice /C:123 /N /M "   Select option  (1) (2) (3): "
+if errorlevel 3 GOTO _Exit_
+if errorlevel 2 GOTO _MainMenu_
+if errorlevel 1 GOTO _Index_
 :
 :
 %= $Create_Library_3rc0 =%
@@ -71,11 +80,49 @@ if errorlevel 1 goto:_Index_
 : 
 : 
 
+echo. Main Menu 
+ech0. ---------
+echo.
+echo. [1] Managment Tools 
+echo.                     ( Adminstration tools, ...etc)
+echo.
+echo. [2] Network Tools
+echo.                  (Networking, IP, NET, IPCONFIG, ARP, ...etc)
+echo.
+echo. [3] Exit
+echo.         (Quite from the Batch Script)
+echo.
+choice /C:123 /N /M "  Select option (1) (2) (3): "
+if errorlevel 3 GOTO _Exit_
+if errorlevel 2 GOTO _Network_
+if errorlevel 1 GOTO _Management_
+
+
+:_Management_
+
+: 
+: 
+%= $Managment_tools
+: 
+: 
+
+ECHO %_un_%
+
+: 
+: 
+%= $Network_Section =%
+: 
+: 
+
+:_Network_
+ECHO %_un_%
+
 : 
 : 
 %= $Exit =%
 : 
 : 
+
 :_Exit_
 echo. 
 %= Text Message for the Exit part =%
@@ -85,7 +132,8 @@ echo. Good Bye.
 echo.
 %= Countdown for 15 seconds for the exit from the Batch Script =%
 timeout /t 15 >nul
-Exit
+
+GOTO:eof
 
 
 
