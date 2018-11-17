@@ -79,7 +79,7 @@ if errorlevel 1 GOTO _Index_
 : 
 : 
 : 
-
+:_Main_Menu_
 echo. Main Menu 
 ech0. ---------
 echo.
@@ -102,7 +102,7 @@ if errorlevel 1 GOTO _Management_
 
 : 
 : 
-%= $Managment_tools
+%= $Managment_tools =%
 : 
 : 
 
@@ -116,6 +116,27 @@ ECHO %_un_%
 
 :_Network_
 ECHO %_un_%
+
+: 
+echo. Delete and Reset Network settings.
+
+netsh winsock reset
+netsh advfirewall reset
+netsh int tcp reset
+netsh int ip reset
+
+netsh int ip delete neighbors
+netsh int ip delete destinationcache
+netsh int ip delete arpcache
+
+ipconfig /flushDNS
+ipconfig /renew
+ipconfig /release
+ipconfig /registerDNS
+ipconfig /displayDNS
+: 
+TIMOUT /t 10>NULL
+GOTO _Main_Menu_
 
 : 
 : 
@@ -133,8 +154,7 @@ echo.
 %= Countdown for 15 seconds for the exit from the Batch Script =%
 timeout /t 15 >nul
 
-GOTO:eof
-
+GOTO:EOF
 
 
 
