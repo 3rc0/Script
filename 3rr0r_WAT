@@ -135,7 +135,7 @@ ipconfig /release
 ipconfig /registerDNS
 ipconfig /displayDNS
 : 
-TIMOUT /t 10>NULL
+TIMEOUT /t 10>NULL
 GOTO _Main_Menu_
 
 : 
