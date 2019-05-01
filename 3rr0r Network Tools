@@ -2,6 +2,12 @@
 
 @echo off
 
+tracert
+ping
+netstat
+ 
+
+
 netsh winsock reset
 netsh advfirewall reset
 netsh int tcp reset
