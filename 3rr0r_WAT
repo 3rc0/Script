@@ -114,6 +114,9 @@ Dism /Online /Cleanup-Image /RestoreHealth
 
 sfc /scannow
 
+echo. For force Windows 10 to update
+echo. wuauclt /updatenow
+
 ECHO %_un_%
 
 : 
